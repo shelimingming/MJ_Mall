@@ -1,0 +1,13 @@
+server:
+  port: 8762
+#  context-path: /member
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+    healthcheck:
+      enabled: true   # 使用Edgware.SR4版本的spring cloud必须要加的参数，不然会报错
+spring:
+  application:
+    name: member
