@@ -12,7 +12,7 @@
     <artifactId>mj-mall-api</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>mj-mall-member-aip</module>
+        <module>mj-mall-member-api</module>
     </modules>
 
     <dependencies>
