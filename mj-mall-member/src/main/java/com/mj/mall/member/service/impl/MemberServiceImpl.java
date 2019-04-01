@@ -6,6 +6,7 @@ import com.mj.mall.member.api.entity.UserEntity;
 import com.mj.mall.member.api.service.MemberService;
 import com.mj.mall.member.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;

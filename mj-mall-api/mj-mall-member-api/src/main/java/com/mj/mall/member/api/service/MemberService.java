@@ -14,7 +14,7 @@ public interface MemberService {
     @RequestMapping("/testResponse")
     public ResponseBase testResponse();
 
-    @RequestMapping("/testResponse")
+    @RequestMapping("/findUserById")
     public ResponseBase findUserById(Integer userId);
 
 }
