@@ -3,10 +3,12 @@ package com.mj.mall.member.service.impl;
 import com.mj.mall.common.base.BaseController;
 import com.mj.mall.common.base.ResponseBase;
 import com.mj.mall.member.api.service.TestService;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@RestController
 public class TestServiceImpl extends BaseController implements TestService {
     @Override
     public Map<String, Object> testRest() {
