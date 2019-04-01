@@ -18,18 +18,7 @@ public class MemberServiceImpl extends BaseController implements MemberService {
     @Autowired
     private UserMapper userMapper;
 
-    @Override
-    public Map<String, Object> testRest() {
-        Map<String, Object> result = new HashMap<>();
-        result.put("errorCode", "200");
-        result.put("errorMsg", "success");
-        return result;
-    }
 
-    @Override
-    public ResponseBase testResponse() {
-        return setResultSuccess("测试BaseController");
-    }
 
     @Override
     public ResponseBase findUserById(Integer userId) {

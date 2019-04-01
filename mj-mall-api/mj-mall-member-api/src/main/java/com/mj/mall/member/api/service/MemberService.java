@@ -7,14 +7,8 @@ import java.util.Map;
 
 @RequestMapping("/member")
 public interface MemberService {
-    @RequestMapping("/testRest")
-    public Map<String, Object> testRest();
-
-
-    @RequestMapping("/testResponse")
-    public ResponseBase testResponse();
 
     @RequestMapping("/findUserById")
-    public ResponseBase findUserById(Integer userId);
+    ResponseBase findUserById(Integer userId);
 
 }
