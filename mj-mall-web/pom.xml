@@ -12,6 +12,12 @@
     <artifactId>mj-mall-web</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.mj.mall</groupId>
+            <artifactId>mj-mall-member-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <!-- 引入freemarker包 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

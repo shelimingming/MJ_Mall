@@ -2,14 +2,17 @@ package com.mj.mall.member.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.mj.mall.common.base.BaseController;
+import com.mj.mall.common.base.BaseRedisService;
 import com.mj.mall.common.base.ResponseBase;
 import com.mj.mall.common.constant.Constants;
 import com.mj.mall.common.utils.MD5Util;
+import com.mj.mall.common.utils.TokenUtils;
 import com.mj.mall.member.api.entity.UserEntity;
 import com.mj.mall.member.api.service.MemberService;
 import com.mj.mall.member.mapper.UserMapper;
 import com.mj.mall.member.mq.MailboxProducer;
 import org.apache.activemq.command.ActiveMQQueue;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +31,9 @@ public class MemberServiceImpl extends BaseController implements MemberService {
 
     @Autowired
     private MailboxProducer mailboxProducer;
+
+    @Autowired
+    private BaseRedisService baseRedisService;
 
     @Override
     public ResponseBase findUserById(Integer userId) {
@@ -56,6 +62,46 @@ public class MemberServiceImpl extends BaseController implements MemberService {
         //通过消息队列发送邮件给用户
         sendEmail(user);
         return setResultSuccess();
+    }
+
+    @Override
+    public ResponseBase login(@RequestBody UserEntity user) {
+        // 1.验证参数
+        String username = user.getUsername();
+        if (StringUtils.isEmpty(username)) {
+            return setResultError("用戶名称不能为空!");
+        }
+        String password = user.getPassword();
+        if (StringUtils.isEmpty(password)) {
+            return setResultError("密码不能为空!");
+        }
+
+        //2.对密码进行加密
+        decodePassword(user);
+
+        //3.数据库查找账号密码是否正确
+        UserEntity userEntity = userMapper.login(user.getUsername(), user.getPassword());
+        return setLogin(userEntity);
+    }
+
+    private ResponseBase setLogin(UserEntity userEntity) {
+        if (userEntity == null) {
+            return setResultError("账号或者密码不能正确");
+        }
+        // 3.如果账号密码正确，对应生成token
+        String memberToken = TokenUtils.getLoginToken();
+        // 4.存放在redis中，key为token value 为 userid
+        Integer userId = userEntity.getId();
+        baseRedisService.setString(memberToken, userId + "", Constants.TOKEN_MEMBER_TIME);
+        // 5.直接返回token
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("memberToken", memberToken);
+        return setResultSuccess(jsonObject);
+    }
+
+    @Override
+    public ResponseBase findByTokenUser(String token) {
+        return null;
     }
 
 

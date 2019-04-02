@@ -15,4 +15,6 @@ public interface UserMapper {
     @Insert("INSERT  INTO `mb_user` (username,password,phone,email,create_time,update_time,open_id) VALUES (#{username}, #{password},#{phone},#{email},#{createTime},#{updateTime},#{openId});")
     Integer insertUser(UserEntity userEntity);
 
+    @Select("select  id,username,password,phone,email,create_time,update_time,open_id from mb_user where username=#{username} and password=#{password}")
+    UserEntity login(@Param("username") String username, @Param("password") String password);
 }
