@@ -5,8 +5,6 @@ import com.mj.mall.member.api.entity.UserEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Map;
-
 @RequestMapping("/member")
 public interface MemberService {
 
@@ -15,5 +13,6 @@ public interface MemberService {
 
     @RequestMapping("/register")
     ResponseBase register(@RequestBody UserEntity user);
+
 
 }

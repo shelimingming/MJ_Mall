@@ -6,9 +6,6 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-    healthcheck:
-      enabled: true   # 使用Edgware.SR4版本的spring cloud必须要加的参数，不然会报错
-
 spring:
   application:
     name: member
@@ -22,6 +19,7 @@ spring:
   #      min-idle: 1
   #      max-active: 1000
   #      max-wait: -1
+
   #数据库连接信息
   datasource:
     name: test
@@ -44,3 +42,10 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
+
+##activemq连接信息
+activemq:
+  broker-url: tcp://127.0.0.1:61616
+  in-memory: true
+  pool:
+    enabled: false

@@ -9,10 +9,10 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface UserMapper {
 
-    @Select("select  id,username,password,phone,email,created,updated from mb_user where id =#{userId}")
+    @Select("select  id,username,password,phone,email,create_time,update_time,open_id from mb_user where id =#{userId}")
     UserEntity findByID(@Param("userId") Integer userId);
 
-    @Insert("INSERT  INTO `mb_user`  (username,password,phone,email,created,updated) VALUES (#{username}, #{password},#{phone},#{email},#{created},#{updated});")
+    @Insert("INSERT  INTO `mb_user` (username,password,phone,email,create_time,update_time,open_id) VALUES (#{username}, #{password},#{phone},#{email},#{createTime},#{updateTime},#{openId});")
     Integer insertUser(UserEntity userEntity);
 
 }

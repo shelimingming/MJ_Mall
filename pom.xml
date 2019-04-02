@@ -14,6 +14,7 @@
         <module>mj-mall-eurekaserver</module>
         <module>mj-mall-api</module>
         <module>mj-mall-member</module>
+        <module>mj-mall-web</module>
     </modules>
 
     <parent>
@@ -52,11 +53,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!-- springboot整合activemq -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-activemq</artifactId>
         </dependency>
         <!-- 集成发送邮件-->
         <dependency>

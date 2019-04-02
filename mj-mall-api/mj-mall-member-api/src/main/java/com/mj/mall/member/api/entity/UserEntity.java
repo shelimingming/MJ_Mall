@@ -9,21 +9,23 @@ public class UserEntity {
     private String password;
     private String phone;
     private String email;
-    private Date created;
-    private Date updated;
+    private Date createTime;
+    private Date updateTime;
+    private String openId;
 
     public UserEntity() {
 
     }
 
-    public UserEntity(Integer id, String username, String password, String phone, String email, Date created, Date updated) {
+    public UserEntity(Integer id, String username, String password, String phone, String email, Date createTime, Date updateTime, String openId) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.phone = phone;
         this.email = email;
-        this.created = created;
-        this.updated = updated;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.openId = openId;
     }
 
     public Integer getId() {
@@ -66,19 +68,27 @@ public class UserEntity {
         this.email = email;
     }
 
-    public Date getCreated() {
-        return created;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreated(Date created) {
-        this.created = created;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getUpdated() {
-        return updated;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdated(Date updated) {
-        this.updated = updated;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
     }
 }
