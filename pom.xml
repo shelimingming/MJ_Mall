@@ -15,6 +15,7 @@
         <module>mj-mall-api</module>
         <module>mj-mall-member</module>
         <module>mj-mall-web</module>
+        <module>mj-mall-message</module>
     </modules>
 
     <parent>

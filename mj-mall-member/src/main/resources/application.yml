@@ -44,8 +44,8 @@ spring:
     maxOpenPreparedStatements: 20
 
 ##activemq连接信息
-activemq:
-  broker-url: tcp://127.0.0.1:61616
-  in-memory: true
-  pool:
-    enabled: false
+  activemq:
+    broker-url: tcp://127.0.0.1:61616
+    in-memory: true
+    pool:
+      enabled: false
