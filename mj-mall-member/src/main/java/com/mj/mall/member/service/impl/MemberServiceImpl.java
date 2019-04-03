@@ -32,8 +32,8 @@ public class MemberServiceImpl extends BaseController implements MemberService {
     @Autowired
     private MailboxProducer mailboxProducer;
 
-    @Autowired
-    private BaseRedisService baseRedisService;
+//    @Autowired
+//    private BaseRedisService baseRedisService;
 
     @Override
     public ResponseBase findUserById(Integer userId) {
@@ -92,7 +92,7 @@ public class MemberServiceImpl extends BaseController implements MemberService {
         String memberToken = TokenUtils.getLoginToken();
         // 4.存放在redis中，key为token value 为 userid
         Integer userId = userEntity.getId();
-        baseRedisService.setString(memberToken, userId + "", Constants.TOKEN_MEMBER_TIME);
+        //baseRedisService.setString(memberToken, userId + "", Constants.TOKEN_MEMBER_TIME);
         // 5.直接返回token
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("memberToken", memberToken);
