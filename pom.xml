@@ -16,6 +16,7 @@
         <module>mj-mall-member</module>
         <module>mj-mall-web</module>
         <module>mj-mall-message</module>
+        <module>mj-mall-test</module>
     </modules>
 
     <parent>
