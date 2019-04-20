@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -28,9 +29,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MemberApp.class)
 @WebAppConfiguration
 @ContextConfiguration
-public class MemberServiceImplTest extends MJMallMemberTest {
+public class TestServiceImplTest extends MJMallMemberTest {
 
-    final static Logger logger = LoggerFactory.getLogger(MemberServiceImplTest.class);
+    final static Logger logger = LoggerFactory.getLogger(TestServiceImplTest.class);
 
     @Autowired
     private WebApplicationContext context;
@@ -51,42 +52,30 @@ public class MemberServiceImplTest extends MJMallMemberTest {
     }
 
     @Test
-    public void findUserById() throws Exception {
+    public void testRest() throws Exception {
         RequestBuilder request = null;
         //路径
-        request = get("/member/findUserById")
-                //参数
-                .param("userId", "37")
-                //接受的数据类型
-                .accept(MediaType.APPLICATION_JSON);
+        request = get("/test/testRest");
         mvc.perform(request)
                 //状态吗是否相等
                 .andExpect(status().isOk())
                 //得到的信息是否与特定字段匹配
-                .andExpect(content().string("{\"code\":200,\"msg\":\"success\",\"data\":{\"id\":37,\"username\":\"sheliming\",\"password\":\"e10adc3949ba59abbe56e057f20f883e\",\"phone\":\"123456789\",\"email\":\"aaa@qq.com\",\"createTime\":null,\"updateTime\":null,\"openId\":null}}"))
+                .andExpect(content().string("{\"errorCode\":\"200\",\"errorMsg\":\"success\"}"))
                 //输出信息
                 .andDo(print());
     }
 
     @Test
-    public void register() {
-    }
-
-    @Test
-    public void login() {
-    }
-
-    @Test
-    public void findByTokenUser() {
-    }
-
-    @Override
-    public void createTables() {
-        logger.info("createTables()");
-    }
-
-    @Override
-    protected void insertTables() {
-        logger.info("insertTables()");
+    public void testResponse() throws Exception {
+        RequestBuilder request = null;
+        //路径
+        request = get("/test/testResponse");
+        mvc.perform(request)
+                //状态吗是否相等
+                .andExpect(status().isOk())
+                //得到的信息是否与特定字段匹配
+                .andExpect(content().string("{\"code\": ,\"msg\":\"success\",\"data\":\"测试BaseController\"}"))
+                //输出信息
+                .andDo(print());
     }
 }

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "code": 200,
+    "msg": "success",
+    "data": {
+      "id": 37,
+      "username": "sheliming",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "phone": "123456789",
+      "email": "aaa@qq.com",
+      "createTime": null,
+      "updateTime": null,
+      "openId": null
+    }
+  },
+  "ignore": []
+}
