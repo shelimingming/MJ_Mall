@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    schema: mySchema.sql
+    data: myData.sql
+    driverClassName: org.hsqldb.jdbcDriver
+    initialize: true
+    url: jdbc:hsqldb:test;hsqldb.default_table_type=cached;sql.syntax_ora=true
+    username: sa
+    password:
+
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.hsqldb.jdbcDriver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
