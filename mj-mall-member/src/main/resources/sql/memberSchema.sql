@@ -11,5 +11,4 @@ CREATE TABLE `mb_user` (
   UNIQUE KEY `username` (`username`) USING BTREE,
   UNIQUE KEY `phone` (`phone`) USING BTREE,
   UNIQUE KEY `email` (`email`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COMMENT='用户表';
-INSERT  INTO `mb_user`  (username,password,phone,email,create_time,update_time) VALUES ('sheliming', 'e10adc3949ba59abbe56e057f20f883e', '123456789', 'aaa@qq.com', '2015-04-06 17:03:55', '2015-04-06 17:03:55');
+) COMMENT='用户表';

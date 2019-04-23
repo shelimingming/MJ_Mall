@@ -1,10 +1,10 @@
-package test;
+package com.mj.mall.test;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import test.util.HSqlHelper;
+import com.mj.mall.test.util.HSqlHelper;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.Statement;

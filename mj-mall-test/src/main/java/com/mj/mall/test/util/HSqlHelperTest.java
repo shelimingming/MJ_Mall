@@ -1,4 +1,4 @@
-package test.util;
+package com.mj.mall.test.util;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;

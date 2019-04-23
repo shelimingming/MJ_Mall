@@ -1,4 +1,4 @@
-package test.expect;
+package com.mj.mall.test.expect;
 
 import java.util.Arrays;
 
