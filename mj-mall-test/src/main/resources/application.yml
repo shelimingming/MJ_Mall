@@ -1,10 +1,10 @@
 spring:
   datasource:
-    schema: mySchema.sql
-    data: myData.sql
+    schema: classpath:memberSchema.sql
+    data: classpath:memberData.sql
     driverClassName: org.hsqldb.jdbcDriver
     initialize: true
-    url: jdbc:hsqldb:test;hsqldb.default_table_type=cached;sql.syntax_ora=true
+    url: jdbc:hsqldb:.
     username: sa
     password:
 

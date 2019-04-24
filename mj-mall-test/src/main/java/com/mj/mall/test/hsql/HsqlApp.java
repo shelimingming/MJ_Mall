@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.mj.mall.test.hsql")
 @MapperScan("com.mj.mall.test.hsql")
 public class HsqlApp {
 

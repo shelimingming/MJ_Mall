@@ -91,4 +91,18 @@ public class UserEntity {
     public void setOpenId(String openId) {
         this.openId = openId;
     }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", openId='" + openId + '\'' +
+                '}';
+    }
 }
