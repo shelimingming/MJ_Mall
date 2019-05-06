@@ -1,9 +1,8 @@
 package com.mj.mall.member;
 
-import com.mj.mall.member.service.impl.MemberServiceImplTest;
+import com.mj.mall.test.MJMallTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import test.MJMallTest;
 
 public class MJMallMemberTest  extends MJMallTest {
     final static Logger logger = LoggerFactory.getLogger(MJMallMemberTest.class);

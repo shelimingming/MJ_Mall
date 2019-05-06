@@ -1,3 +1,7 @@
+-- ----------------------------
+-- Table structure for mb_user
+-- ----------------------------
+DROP TABLE IF EXISTS `mb_user`;
 CREATE TABLE `mb_user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL COMMENT '用户名',
@@ -6,9 +10,9 @@ CREATE TABLE `mb_user` (
   `email` varchar(50) DEFAULT NULL COMMENT '注册邮箱',
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `update_time` datetime NOT NULL COMMENT '修改时间',
-  `open_id` varchar(100) COMMENT '对外id',
+  `open_id` varchar(100) DEFAULT NULL COMMENT '对外id',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`) USING BTREE,
   UNIQUE KEY `phone` (`phone`) USING BTREE,
   UNIQUE KEY `email` (`email`) USING BTREE
-) COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COMMENT='用户表';
