@@ -11,8 +11,8 @@ spring:
     name: member
   #redis连接信息
   redis:
-    host: 192.168.110.163
-    password: 123456
+    host: 192.168.61.129
+#    password: 123456
     port: 6379
     pool:
       max-idle: 100

@@ -1,8 +1,15 @@
 package com.mj.mall.common.base;
 
 import com.mj.mall.common.constant.Constants;
+import com.mj.mall.common.redis.BaseRedisService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BaseController {
+    @Autowired
+    protected BaseRedisService baseRedisService;
+
     // 返回成功 ,data值为null
     public ResponseBase setResultSuccess() {
         return setResult(Constants.HTTP_RES_CODE_200, Constants.HTTP_RES_CODE_200_VALUE, null);

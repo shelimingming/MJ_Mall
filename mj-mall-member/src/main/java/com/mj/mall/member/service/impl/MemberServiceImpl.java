@@ -2,7 +2,6 @@ package com.mj.mall.member.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.mj.mall.common.base.BaseController;
-import com.mj.mall.common.base.BaseRedisService;
 import com.mj.mall.common.base.ResponseBase;
 import com.mj.mall.common.constant.Constants;
 import com.mj.mall.common.utils.MD5Util;

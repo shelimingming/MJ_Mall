@@ -22,4 +22,17 @@ public class TestServiceImpl extends BaseController implements TestService {
     public ResponseBase testResponse() {
         return setResultSuccess("测试BaseController");
     }
+
+    @Override
+    public ResponseBase setRedis(String key, String value) {
+        baseRedisService.setString(key, value);
+        return setResultSuccess();
+    }
+
+    @Override
+    public ResponseBase getRedis(String key) {
+        String value = baseRedisService.getString(key);
+        return setResultSuccess(value);
+    }
+
 }

@@ -15,4 +15,11 @@ public interface TestService {
 
     @RequestMapping("/testResponse")
     ResponseBase testResponse();
+
+    @RequestMapping("/setRedis")
+    ResponseBase setRedis(String key, String value);
+
+    @RequestMapping("/getRedis")
+    ResponseBase getRedis(String key);
+
 }
