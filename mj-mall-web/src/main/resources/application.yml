@@ -8,3 +8,6 @@ eureka:
 spring:
   application:
     name: web
+
+  resources:
+    static-locations: classpath:/testStatic/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/

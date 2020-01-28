@@ -11,9 +11,18 @@
 
     <artifactId>mj-mall-api</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>mj-mall-member-api</module>
+        <module>mj-mall-sso-api</module>
     </modules>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>com.mj.mall</groupId>
+            <artifactId>mj-mall-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -17,6 +17,7 @@
         <module>mj-mall-web</module>
         <module>mj-mall-message</module>
         <module>mj-mall-test</module>
+        <module>mj-mall-sso</module>
     </modules>
 
     <parent>
@@ -36,16 +37,19 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.4</version>
         </dependency>
+
         <!-- 集成lombok 框架 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+
         <!-- 集成redis -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+
         <!-- 集成aop -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

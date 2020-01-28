@@ -4,13 +4,9 @@ public class Constants {
 
 
     // 响应请求成功
-    public static String HTTP_RES_CODE_200_VALUE = "success";
-    // 系统错误
-    public static String HTTP_RES_CODE_500_VALUE = "fial";
+    public static String HTTP_RES_CODE_SUCCESS_VALUE = "success";
     // 响应请求成功code
-    public static Integer HTTP_RES_CODE_200 = 200;
-    // 系统错误
-    public static Integer HTTP_RES_CODE_500 = 500;
+    public static String HTTP_RES_CODE_SUCCESS = "0";
 
     public static Long TOKEN_MEMBER_TIME = Long.parseLong(12 * 60 * 60 * 1000 + "");
 

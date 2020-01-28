@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EnableEurekaClient
 @SpringBootApplication
-@ComponentScan("com.mj.mall")
+@ComponentScan({"com.mj.mall.member","com.mj.mall.common","com.mj.mall.sso.interceptor"})
 @MapperScan("com.mj.mall.member.mapper")
 public class MemberApp {
 

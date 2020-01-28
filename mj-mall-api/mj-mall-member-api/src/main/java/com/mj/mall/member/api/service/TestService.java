@@ -7,11 +7,8 @@ import java.util.Map;
 
 @RequestMapping("/test")
 public interface TestService {
-
-
     @RequestMapping("/testRest")
     Map<String, Object> testRest();
-
 
     @RequestMapping("/testResponse")
     ResponseBase testResponse();
